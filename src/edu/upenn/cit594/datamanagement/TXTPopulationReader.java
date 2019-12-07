@@ -9,15 +9,15 @@ import edu.upenn.cit594.data.Population;
 public class TXTPopulationReader implements PopulationReader{
 
 	String fileName;
-	ArrayList<Population> population;
+	HashMap<String, Integer> populations;
 	
 	public TXTPopulationReader(String myFile) {
 		fileName=myFile;
 		
 	}
 	
-	public ArrayList<Population> read(){
-		population = new ArrayList<>();
+	public HashMap<String, Integer> read(){
+		populations = new HashMap<>();
 		String str;
 		String txtSplitBy =" ";
 		
@@ -36,13 +36,17 @@ public class TXTPopulationReader implements PopulationReader{
 						
 						if(populationString.length<2)
 							continue;
-						Population pp = new Population();
+						
+						Population pp = Population.getInstance();
+						/*
 						pp.setPopulation(Integer.parseInt(populationString[1]));
 						pp.setZipCode(Integer.parseInt(populationString[0]));
 						
 						//System.out.print(pp.getPopulation()+"\n");
 
 						population.add(pp);
+						*/
+						pp.add(populationString[0], populationString[1]);
 						
 					}
 				} catch (NumberFormatException e) {
@@ -55,7 +59,7 @@ public class TXTPopulationReader implements PopulationReader{
 		
 		//System.out.println(tweets.get(1).getCoordinate()+tweets.get(1).getText());
 		
-	return population;
+	return Population.get();
 	}
 
 	public String[] splitt(String str){
