@@ -49,7 +49,6 @@ public class Logger {
 		}
 		
 		String time = Long.toString(System.currentTimeMillis());
-		System.out.println(time);
 		
 		String toPrint = time + " " + msg;
 		
