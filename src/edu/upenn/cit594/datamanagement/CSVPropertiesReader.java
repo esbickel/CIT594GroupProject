@@ -14,6 +14,10 @@ public class CSVPropertiesReader implements PropertiesReader {
 	Properties p = new Properties(); // each row of the Parking JSON File
 	ArrayList<Properties> properties = new ArrayList<>();
 	
+	public CSVPropertiesReader() {
+	
+	}
+	
 	public CSVPropertiesReader(String myFile) {
 		fileName = myFile;
 	}

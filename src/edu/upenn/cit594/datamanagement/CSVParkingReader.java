@@ -11,9 +11,14 @@ public class CSVParkingReader implements ParkingReader {
 	Parking p = new Parking(); // each row of the Parking JSON File
 	ArrayList<Parking> parking = new ArrayList<>();
 
+	public CSVParkingReader() {
+		
+	}
+	
 	public CSVParkingReader(String myFile) {
 		fileName = myFile;
 	}
+	
 
 	public ArrayList<Parking> read() {
 
