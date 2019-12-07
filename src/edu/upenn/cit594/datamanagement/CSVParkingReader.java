@@ -34,15 +34,25 @@ public class CSVParkingReader implements ParkingReader {
 				Parking p= new Parking();
 				double fine=0;
 				int zipCode=0;
+				String state;
 				
 				//Use comma as a seperatpr
-				String[] violations = line.split(csvSplitBy);
+				String[] violations = line.split(csvSplitBy,-1);
 				
+				if(violations[1].isEmpty())
+					continue;                  //ignore the whole row when fine is missing
 				fine=Double.parseDouble(violations[1]); //convert string fine to numeric fine
 				p.setFine(fine);
 				System.out.println("The FINE of the violation is " + violations[1]);
 				
-				if(violations.length<7) //check if the row has 7 columns in case zip code is missing
+
+				if(violations[4].isEmpty()) //ignore the whole row when state is missing
+					continue;
+				state=violations[4];
+				p.setState(state);
+				System.out.println("The STATE of the violation is " + violations[4]);
+				
+				if(violations[6].isEmpty()) //ignore the whole row when zip code is missing
 					continue;
 				zipCode=Integer.parseInt(violations[6]);
 				p.setZipCode(zipCode);
