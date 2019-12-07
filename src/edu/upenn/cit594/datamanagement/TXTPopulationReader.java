@@ -11,11 +11,6 @@ public class TXTPopulationReader implements PopulationReader{
 	String fileName;
 	ArrayList<Population> population;
 	
-	public TXTPopulationReader() {
-	
-		
-	}
-	
 	public TXTPopulationReader(String myFile) {
 		fileName=myFile;
 		

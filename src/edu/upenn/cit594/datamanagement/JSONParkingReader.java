@@ -16,10 +16,6 @@ public class JSONParkingReader implements ParkingReader{
 	public JSONParkingReader(String myFile) {
 		fileName = myFile;
 	}
-	
-	public JSONParkingReader() {
-		
-	}
 
 	public ArrayList<Parking> read(){
 		int n=0;
