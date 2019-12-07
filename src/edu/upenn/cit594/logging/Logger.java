@@ -61,6 +61,14 @@ public class Logger {
 		String msg = Integer.toString(num);
 		log(msg);
 	}
+	//Overload log method for array
+	public void log(String[] args) {
+		String msg = "";
+		for (String s: args) {
+			msg = msg + s + " ";
+		}
+		this.log(msg);
+	}
 
 	
 	/*NEED TO ADD, TO ACCESS LOGGER
@@ -75,9 +83,13 @@ public class Logger {
 	 */
 	
 	
-	/*Test Main
+	//Test Main
 	public static void main(String[] args) {
-
+		/*User needs to enter:
+		 * - number (0-6) for activity choice
+		 * 
+		 */
+		
 		Logger newLog = Logger.getInstance();
 		newLog.log("Test Message 1");
 		newLog.log(5);
@@ -85,6 +97,6 @@ public class Logger {
 		
 		Logger anotherLog = Logger.getInstance();
 		anotherLog.log("Log from another instance");
-		*/
+		
 	}
 }
