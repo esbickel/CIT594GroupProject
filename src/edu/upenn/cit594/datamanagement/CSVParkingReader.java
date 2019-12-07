@@ -6,14 +6,22 @@ import java.util.*;
 
 import edu.upenn.cit594.data.Parking;
 
-public class CSVParkingReader implements Reader {
+public class CSVParkingReader implements ParkingReader {
+	String fileName;
+	Parking p = new Parking(); // each row of the Parking JSON File
+	ArrayList<Parking> parking = new ArrayList<>();
 
+	public CSVParkingReader(String myFile) {
+		fileName = myFile;
+	}
 
 	public ArrayList<Parking> read() {
 
 		ArrayList<Parking> parking = new ArrayList<>();
 		//ArrayList<ArrayList<String>> parkingViolations = new ArrayList<ArrayList<String>>();
-		String csvFile = "parking.csv";
+		String csvFile;
+		//csvFile = "parking.csv";
+		csvFile=fileName;
 		BufferedReader br = null;
 
 		String line = "";
@@ -67,8 +75,8 @@ public class CSVParkingReader implements Reader {
 
 	public static void main(String[] args) {
 
-		CSVParkingReader test = new CSVParkingReader();
-		ArrayList<Parking> test2 = test.read();
+		CSVParkingReader test = new CSVParkingReader("parking.csv");
+		test.read();
 	
 			//System.out.println(test2.get(3)); //Printing out all the dates
 

@@ -1,56 +1,87 @@
 package edu.upenn.cit594.datamanagement;
-
-import java.util.ArrayList;
-
 import edu.upenn.cit594.data.Parking;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
+import java.io.*;
+import java.util.*;
+import org.json.simple.*;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
-
-public class JSONParkingReader implements Reader{
 
 
-	
-	public ArrayList<Parking> read() {
+public class JSONParkingReader implements ParkingReader{
+	String fileName;
+	Parking p = new Parking(); // each row of the Parking JSON File
+	ArrayList<Parking> parking = new ArrayList<>();
+
+	public JSONParkingReader(String myFile) {
+		fileName = myFile;
+	}
+
+	public ArrayList<Parking> read(){
+		int n=0;
+		//create a parser
+		JSONParser parser = new JSONParser();
+
+		// open the file and get the array of JSON objects
+
+		JSONArray parkings = new JSONArray();
+		try {
+			parkings = (JSONArray)parser.parse(new FileReader(fileName));
+		} catch (IOException | ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		
 
-        ArrayList<JSONObject> parkingViolations = new ArrayList<JSONObject>();
-        JSONParser parser = new JSONParser();
-        try {
-            FileReader fileReader = new FileReader(("parking.json"));
-            JSONArray parkViolations = (JSONArray) parser.parse(fileReader);
-            Iterator iter = parkViolations.iterator();
+		// use an iterator to iterate over each element of the array 
+		Iterator iter = parkings.iterator();
 
-            while (iter.hasNext()) {
-                // Get the next json object
-                JSONObject park = (JSONObject) iter.next();
-                parkingViolations.add(park);
+		// iterate while there are more objects in array
+		while(iter.hasNext()) {
+			p = new Parking();
+			// get the next JSON object
+			JSONObject JSONParking = (JSONObject) iter.next();
 
-            }
-        } catch (ParseException e) {
-            e.printStackTrace();
+			// use the "get" method to print the value associated with that key
+			
+			String fineString = JSONParking.get("fine").toString();
+			String zipCodeString = JSONParking.get("zip_code").toString();
+			
+			//JSONParking.get("zip_code").
+			if(fineString.length()<1)
+				continue;
+			if(zipCodeString.length()<1)
+				continue;
+			
+			double fine = Double.parseDouble(fineString);
+			int zipCode=Integer.parseInt(zipCodeString);
+			//int zipCode= Integer.parseInt(JSONParking.get("zip_code"));
 
-        } catch (
-                IOException ex) {
-            ex.printStackTrace();
-        }
-        return (parkingViolations);
 
-    }
+			System.out.print(JSONParking.get("zip_code")+"\n");
+			//System.out.println(zipCode);
+			//System.out.println(tweet.get("location"));
+			
+			//p.setFine(fine);		
+			//p.setZipCode(zipCode);		
+			
+			n++;
+			parking.add(p);
+
+		}
+		System.out.println("n= "+n);
+		return parking;
+
+	}
 
 
-    public static void main(String[] args) {
 
-        JSONFileReader test = new JSONFileReader();
-        System.out.println(test.jsonFile().get(1));
+public static void main(String[] args) {
 
-    }
+	JSONParkingReader test = new JSONParkingReader("parking.json");
+	test.read();
 
 }
 
+}
