@@ -5,7 +5,7 @@ import java.util.*;
 import org.json.simple.*;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-
+import edu.upenn.cit594.logging.Logger;
 
 
 public class JSONParkingReader implements ParkingReader{
