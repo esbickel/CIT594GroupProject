@@ -29,7 +29,7 @@ public class propertiesProcessor {
 		
 		PropertiesReader pr = new CSVPropertiesReader("properties.csv");
 		ArrayList<Properties> props = pr.read();
-		if(props == null) {return -1;}
+		if(props == null) {return;}
 		
 		double attributeTotal = strategy.attributeSum(intZIP, props);
 		
