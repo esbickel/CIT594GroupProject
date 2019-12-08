@@ -12,10 +12,8 @@ import edu.upenn.cit594.datamanagement.PropertiesReader;
 import edu.upenn.cit594.datamanagement.TXTPopulationReader;
 
 public class propertiesProcessor {
-	
-	String strategy;
-	
-	public void PropertyAverage(Strategy strategy, String fileName) {
+		
+	public static void PropertyAverage(Strategy strategy, String fileName) {
 		
 		Scanner kbIn = new Scanner(System.in);
 		Set<String> ZipCodes = Population.getZipCodes();
