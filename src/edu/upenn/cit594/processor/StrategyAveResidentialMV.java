@@ -8,9 +8,9 @@ import edu.upenn.cit594.datamanagement.PropertiesReader;
 
 public class StrategyAveResidentialMV implements Strategy {
 	
-	public double attributeSum(Integer zip, ArrayList<Properties> props) {
+	public long attributeSum(Integer zip, ArrayList<Properties> props) {
 		
-		double MVsum = 0;
+		long MVsum = 0;
 		
 		for (Properties prop : props) {
 			if (prop.getZipCode() == zip) {
