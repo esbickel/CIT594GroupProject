@@ -27,6 +27,7 @@ public class JSONParkingReader implements ParkingReader{
 		JSONArray parkings = new JSONArray();
 		try {
 			parkings = (JSONArray)parser.parse(new FileReader(fileName));
+			Logger l = Logger.getInstance(); l.log(fileName); //Logging
 		} catch (IOException | ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
