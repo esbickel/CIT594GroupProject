@@ -106,7 +106,7 @@ public class CSVPropertiesReader implements PropertiesReader {
 
 
 	}
-
+/*
 	public static void main(String[] args) {
 
 		CSVPropertiesReader test = new CSVPropertiesReader("properties.csv");
@@ -117,6 +117,6 @@ public class CSVPropertiesReader implements PropertiesReader {
 
 		}
 
-
+*/
 	
 }

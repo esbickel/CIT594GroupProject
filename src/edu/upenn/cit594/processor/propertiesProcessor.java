@@ -53,9 +53,9 @@ public class propertiesProcessor {
 			return 0;	
 			}
 		else {
-		double average = attTotal/propCount;		
-		System.out.println(average);
-		return average;
+		double average = attTotal/propCount;	
+		System.out.println((int)average);
+		return (int)average;
 		}
 	}
 	

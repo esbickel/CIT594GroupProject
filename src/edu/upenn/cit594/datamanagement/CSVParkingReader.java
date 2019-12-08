@@ -83,7 +83,7 @@ public class CSVParkingReader implements ParkingReader {
 
 
 	}
-
+/*
 	public static void main(String[] args) {
 
 		CSVParkingReader test = new CSVParkingReader("parking.csv");
@@ -93,7 +93,7 @@ public class CSVParkingReader implements ParkingReader {
 
 
 		}
-
+*/
 
 	
 }

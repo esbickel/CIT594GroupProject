@@ -68,12 +68,12 @@ public class TXTPopulationReader implements PopulationReader{
 		String[] pp = strr.split("\t");
 		return pp;
 	}
-	
+	/*
 	public static void main(String[] args) {
 
 		TXTPopulationReader test3 = new TXTPopulationReader("population.txt");
 		test3.read();
 
 	}
-	
+	*/
 }

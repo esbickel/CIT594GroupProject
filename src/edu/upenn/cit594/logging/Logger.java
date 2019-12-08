@@ -84,11 +84,8 @@ public class Logger {
 	
 	
 	//Test Main
-	public static void main(String[] args) {
-		/*User needs to enter:
-		 * - number (0-6) for activity choice
-		 * 
-		 */
+	/* public static void main(String[] args) {
+		
 		
 		Logger newLog = Logger.getInstance();
 		newLog.log("Test Message 1");
@@ -98,5 +95,6 @@ public class Logger {
 		Logger anotherLog = Logger.getInstance();
 		anotherLog.log("Log from another instance");
 		
-	}
+	} 
+	*/
 }

@@ -85,12 +85,12 @@ public class JSONParkingReader implements ParkingReader{
 	}
 
 
-
+	/*
 	public static void main(String[] args) {
 
 		JSONParkingReader test = new JSONParkingReader("parking.json");
 		test.read();
 
 	}
-
+*/
 }

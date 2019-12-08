@@ -9,6 +9,7 @@ import java.util.Set;
 
 import edu.upenn.cit594.processor.propertiesProcessor;
 import edu.upenn.cit594.data.Parking;
+import edu.upenn.cit594.data.Population;
 import edu.upenn.cit594.data.Properties;
 import edu.upenn.cit594.datamanagement.ParkingReader;
 import edu.upenn.cit594.logging.Logger;
@@ -48,10 +49,7 @@ public class userInterface {
 			System.out.println("please specify the action to be performed (type 0~6)"+"\n");
 
 			String userStep = myObj.nextLine();  // Read user input
-
-			//Logging
-			Logger l = Logger.getInstance();
-			l.log(userStep);
+			Logger l = Logger.getInstance(); l.log(userStep); //Logging
 
 			if(userStep.matches("[0-9]+") && (Integer.parseInt(userStep))<=6&&Integer.parseInt(userStep)>=0)
 			{
@@ -88,13 +86,22 @@ public class userInterface {
 					//}
 					//calculate if the calculation has not been done before
 					//else {
-					ParkingProcessor parkingProcessor = new ParkingProcessor();									
-					totalFinesPerCapita = parkingProcessor.totalFinesPerCapita(parking, population,true);
+					if (totalFinesPerCapita.isEmpty()) {
+						ParkingProcessor parkingProcessor = new ParkingProcessor();									
+						totalFinesPerCapita = parkingProcessor.totalFinesPerCapita(parking, population,true);
+					}
+					else {
+						for (int ZIP : totalFinesPerCapita.keySet()) {
+							System.out.println(ZIP+" "+totalFinesPerCapita.get(ZIP));
+						}
+					}
+					
 					//}
 				}
 				else if (step == 3) {
 					double aveRMV=0;
 					zipCode=askUserForZipCode();
+					if (zipCode == 0) {System.out.println(zipCode);break;}
 					
 					//for memorization purpose: check if the calculation has been done for previous same user input
 					if(aveResidentialMV!=null&&aveResidentialMV.containsKey(zipCode))
@@ -113,7 +120,8 @@ public class userInterface {
 				else if (step == 4) {
 					double aveRTLA=0;
 					zipCode=askUserForZipCode();
-					if(aveResidentialTLA!=null&&aveResidentialMV.containsKey(zipCode))
+					if (zipCode == 0) {System.out.println(zipCode);break;}
+					if(aveResidentialTLA!=null&&aveResidentialTLA.containsKey(zipCode))
 					{
 						aveRTLA=aveResidentialTLA.get(zipCode);
 						System.out.println(aveResidentialTLA.get(zipCode));
@@ -128,6 +136,7 @@ public class userInterface {
 				else if (step == 5) {
 					double mktValue=0;
 					zipCode=askUserForZipCode();
+					if (zipCode == 0) {System.out.println(zipCode);break;}
 					if(mktValuePerCapita!=null&&mktValuePerCapita.containsKey(zipCode))
 					{
 						mktValue=mktValuePerCapita.get(zipCode);
@@ -159,15 +168,21 @@ public class userInterface {
 		int zipCode;
 		System.out.println("please specify the Zip Code");
 		Scanner myObj = new Scanner(System.in);  // Create a Scanner object
-
+		
 		String userZipCode = myObj.nextLine();  // Read user input
-		while(true) {
-			if(userZipCode.matches("[0-9]+") && userZipCode.length()==5)
-			{
-				zipCode=Integer.parseInt(userZipCode);
-				return zipCode;
-			}
-			askUserForZipCode();
+		Logger l = Logger.getInstance(); l.log(userZipCode); //Logging
+		
+		Set<Integer> ZipCodes = Population.getZipCodes();
+		if (!ZipCodes.contains(Integer.parseInt(userZipCode))) {
+			return 0;
+		}
+		
+		if(userZipCode.matches("[0-9]+") && userZipCode.length()==5){
+			zipCode=Integer.parseInt(userZipCode);
+			return zipCode;
+		}
+		else {
+			return 0;
 		}
 	}
 

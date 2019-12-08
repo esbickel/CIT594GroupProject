@@ -33,8 +33,7 @@ public class Main {
 		String populationFile = args[3];	
 		String logFile = args[4];
 		
-		Logger l = Logger.getInstance(logFile);
-		l.log(args);
+		Logger l = Logger.getInstance(logFile);l.log(args); //Logging
 		
 		HashMap<Integer,Integer> population = new HashMap<>();
 		ArrayList<Parking> parking = new ArrayList<>();
