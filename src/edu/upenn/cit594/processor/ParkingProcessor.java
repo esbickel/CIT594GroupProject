@@ -10,6 +10,12 @@ import edu.upenn.cit594.datamanagement.ParkingReader;
 public class ParkingProcessor {
 
 	protected ParkingReader reader;
+	HashMap<Integer,Double> totalFines = new HashMap<>(); //for memorization purpose
+	HashMap<Integer,Double> totalFinesPerCapita = new HashMap<>(); //for memorization purpose
+
+	public ParkingProcessor(){
+		
+	}
 
 	public static ParkingReader parkingProcess(String fileType, String fileName) {
 
@@ -22,15 +28,16 @@ public class ParkingProcessor {
 		return null;
 	}
 
-	public ArrayList<String> totalFinesPerCapita(ArrayList<Parking> parking, ArrayList<Population> population) {
+	public HashMap<Integer,Double> totalFinesPerCapita(ArrayList<Parking> parking, HashMap<Integer,Integer>population) {
 		ArrayList<String> sortedOutput= new ArrayList<>();
+		HashMap<Integer,Double> output = new HashMap<Integer,Double>();
 		HashMap<Integer,Double> totalFines = new HashMap<>();
 		HashMap<Integer,Double> totalFinesPerCapita = new HashMap<>();
 
 		for(int i=0; i<parking.size();i++)
 		{	
 			Parking p=parking.get(i);  //for memorization puporse
-			int zipCode =p.getZipCode();
+			Integer zipCode =p.getZipCode();
 			double fines =p.getFine();
 			double currentTotalFines=0;
 			
@@ -80,10 +87,37 @@ public class ParkingProcessor {
 		Arrays.sort(arr);
 		for(Object key:arr) {
 			sortedOutput.add(key+" "+totalFinesPerCapita.get(key));
+			output.put((Integer) key,totalFinesPerCapita.get(key));
 		}
 		for(int i=0;i<sortedOutput.size();i++)
 			System.out.println(sortedOutput.get(i));
-		return sortedOutput;
+		return output;
+	}
+
+
+	//calculate the top 1 fine per capita with its area zip code and average residential market value for that zipcode area.
+	//output will look like this: zipcode +topFinesPerCapita + averageResidentialMV
+	public String Top1FinePerCapita(HashMap<Integer,Integer> population, String PropertyFile, ArrayList<Parking> parking){
+		
+		HashMap<Integer,Double> totalFinesPerCapitaPerZip =new HashMap<>();
+		double top1Fine=0;
+		int zipCode;
+		double aveMktValue =0;
+		totalFinesPerCapitaPerZip = totalFinesPerCapita( parking, population);
+		
+		for (Map.Entry<Integer,Double> entry : totalFinesPerCapitaPerZip.entrySet())  {
+			if(top1Fine<entry.getValue())
+			{
+				top1Fine = entry.getValue();
+				zipCode = entry.getKey();
+		 }
+			//need to add return and also argument to propertyAverage() method
+			aveMktValue = PropertiesProcessor.PropertyAverage(new StrategyAveResidentialMV(), PropertyFile);
+			System.out.println("the top1 fine per capita with its area zip code and average residential market value:");
+			System.out.println("Zip code=" + zipCode + ", topFinesPerCapita" + top1Fine + " ,averageResidentialMV" + aveMktValue);
+		
+		
+		return null;
 	}
 
 
