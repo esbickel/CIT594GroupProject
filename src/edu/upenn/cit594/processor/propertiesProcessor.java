@@ -10,6 +10,7 @@ import edu.upenn.cit594.datamanagement.CSVPropertiesReader;
 import edu.upenn.cit594.datamanagement.PopulationReader;
 import edu.upenn.cit594.datamanagement.PropertiesReader;
 import edu.upenn.cit594.datamanagement.TXTPopulationReader;
+import edu.upenn.cit594.logging.Logger;
 
 public class propertiesProcessor {
 		

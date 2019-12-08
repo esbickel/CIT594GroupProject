@@ -2,6 +2,7 @@ package edu.upenn.cit594.ui;
 
 import java.util.Scanner;
 import edu.upenn.cit594.processor.propertiesProcessor;
+import edu.upenn.cit594.logging.Logger;
 import edu.upenn.cit594.processor.ParkingProcessor;
 import edu.upenn.cit594.processor.Strategy;
 import edu.upenn.cit594.processor.StrategyAveResidentialMV;
