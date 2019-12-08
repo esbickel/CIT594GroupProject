@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import edu.upenn.cit594.data.Parking;
 import edu.upenn.cit594.data.Properties;
+import edu.upenn.cit594.logging.Logger;
 
 public class CSVPropertiesReader implements PropertiesReader {
 	String fileName;
