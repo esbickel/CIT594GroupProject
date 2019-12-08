@@ -20,7 +20,7 @@ public class Population {
 	}
 	
 	//Instance
-	public static Population instance = new Population();
+	private static Population instance = new Population();
 	
 	
 	//Get methods
