@@ -15,7 +15,7 @@ public class propertiesProcessor {
 	
 	String strategy;
 	
-	public double PropertyAverage(Strategy strategy, String fileName) {
+	public void PropertyAverage(Strategy strategy, String fileName) {
 		
 		Scanner kbIn = new Scanner(System.in);
 		Set<String> ZipCodes = Population.getZipCodes();
@@ -42,6 +42,6 @@ public class propertiesProcessor {
 		
 		double average = attributeTotal/propCount;
 		
-		return average;
+		System.out.println(average);
 	}
 }
