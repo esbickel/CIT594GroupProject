@@ -59,8 +59,8 @@ public class ParkingProcessor {
 		
 		
 		//Suggested:
-		Set<String> ZipCodes = Population.getZipCodes();
-		for (String zipCode : ZipCodes) {
+		Set<Integer> ZipCodes = Population.getZipCodes();
+		for (Integer zipCode : ZipCodes) {
 		 		int pop = Population.getPopulation(zipCode);
 		 
 		/*
