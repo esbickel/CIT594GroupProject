@@ -12,11 +12,11 @@ import edu.upenn.cit594.logging.Logger;
 
 public class Population {
 	
-	private static HashMap<Integer, Integer> populations;
+	private static HashMap<String, Integer> populations;
 	
 	// Constructor
 	private Population() {
-		populations = new HashMap <Integer, Integer>();
+		populations = new HashMap <String, Integer>();
 	}
 	
 	//Instance
@@ -24,15 +24,15 @@ public class Population {
 	
 	
 	//Get methods
-	public void add(int zip, String pop) {
+	public void add(String zip, String pop) {
 		populations.put(zip, Integer.parseInt(pop));
 	}
 	
-	public static Integer getPopulation(int Zip) {
+	public static Integer getPopulation(String Zip) {
 		return populations.get(Zip);
 	}
 	
-	public static Set<Integer> getZipCodes() {
+	public static Set<String> getZipCodes() {
 		return(populations.keySet());
 	}
 	
@@ -40,7 +40,7 @@ public class Population {
 		return instance;
 	}
 	
-	public static HashMap<Integer, Integer> get(){
+	public static HashMap<String, Integer> get(){
 		return populations;
 	}
 	
