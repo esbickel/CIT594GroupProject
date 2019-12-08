@@ -30,6 +30,7 @@ public class CSVParkingReader implements ParkingReader {
 		try {
 
 			br = new BufferedReader(new FileReader(csvFile));
+			Logger l = Logger.getInstance(); l.log(csvFile); //Logging
 			while ((line = br.readLine()) != null) {
 				Parking p= new Parking();
 				double fine=0;
