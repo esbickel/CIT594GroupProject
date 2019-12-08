@@ -32,6 +32,8 @@ public class CSVPropertiesReader implements PropertiesReader {
 		try {
 
 			br = new BufferedReader(new FileReader(fileName));
+			Logger l = Logger.getInstance(); l.log(fileName); //Logging
+			
 			//if(br.readLine()==null)
 			//{
 			//	System.out.print("the file is empty");
