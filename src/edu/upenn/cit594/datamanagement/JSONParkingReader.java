@@ -32,8 +32,8 @@ public class JSONParkingReader implements ParkingReader{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
+
+
 
 		// use an iterator to iterate over each element of the array 
 		Iterator iter = parkings.iterator();
@@ -45,44 +45,52 @@ public class JSONParkingReader implements ParkingReader{
 			JSONObject JSONParking = (JSONObject) iter.next();
 
 			// use the "get" method to print the value associated with that key
-			
+
 			String fineString = JSONParking.get("fine").toString();
 			String zipCodeString = JSONParking.get("zip_code").toString();
-			
-			//JSONParking.get("zip_code").
+			String state = JSONParking.get("state").toString();
+
+
+			//check data type
 			if(fineString.length()<1)
 				continue;
 			if(zipCodeString.length()<1)
 				continue;
+			if(state.length()<1)
+				continue;
+			if(!fineString.matches("[0-9]+")||!zipCodeString.matches("[0-9]+"))
+				continue;
+			
+			
 			
 			double fine = Double.parseDouble(fineString);
 			int zipCode=Integer.parseInt(zipCodeString);
 			//int zipCode= Integer.parseInt(JSONParking.get("zip_code"));
 
 
-			System.out.print(JSONParking.get("zip_code")+"\n");
+			//System.out.print(JSONParking.get("zip_code")+"\n");
 			//System.out.println(zipCode);
 			//System.out.println(tweet.get("location"));
-			
-			//p.setFine(fine);		
-			//p.setZipCode(zipCode);		
-			
-			n++;
+
+			p.setFine(fine);		
+			p.setZipCode(zipCode);		
+			p.setState(state);
+			//n++;
 			parking.add(p);
 
 		}
-		System.out.println("n= "+n);
+		//System.out.println("n= "+n);
 		return parking;
 
 	}
 
 
 
-public static void main(String[] args) {
+	public static void main(String[] args) {
 
-	JSONParkingReader test = new JSONParkingReader("parking.json");
-	test.read();
+		JSONParkingReader test = new JSONParkingReader("parking.json");
+		test.read();
 
-}
+	}
 
 }

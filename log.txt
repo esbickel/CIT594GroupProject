@@ -16,3 +16,6 @@
 1575780954268 properties.csv
 1575783112905 parking.csv
 1575788409804 csv parking.csv properties.csv population.txt logger.txt 
+1575788550438 parking.csv
+1575789019972 parking.json
+1575789033303 parking.json
