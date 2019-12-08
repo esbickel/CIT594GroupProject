@@ -71,17 +71,14 @@ public class CSVPropertiesReader implements PropertiesReader {
 					continue; //data is missing, ignore the whole row
 				marketValue=Double.parseDouble(propertyString[a]); 
 				property.setMarketValue(marketValue);
-				System.out.println("The market value is " + propertyString[a]);
 				
 				
 				totalLivableArea=Double.parseDouble(propertyString[b]);
 				property.setTotalLivableArea(totalLivableArea);;
-				System.out.println("The totalLivableArea is " + propertyString[b]);
 				
 				
 				zipCode=Integer.parseInt(propertyString[c].substring(0,5)); //only use first 5 digits as zip-code
 				property.setZipCode(zipCode);
-				System.out.println("The Zip Code is " + zipCode);
 				properties.add(property);
 
 				}

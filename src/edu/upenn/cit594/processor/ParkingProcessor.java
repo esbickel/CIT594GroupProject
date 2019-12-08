@@ -50,11 +50,18 @@ public class ParkingProcessor {
 									
 		}
 		
+		
+		//Suggested:
+		Set<String> ZipCodes = Population.getZipCodes();
+		for (String zipCode : ZipCodes) {
+		 		int pop = Population.getPopulation(zipCode);
+		 
+		/*
 		for(int i=0;i<population.size();i++) {
 			Population p=population.get(i);
 			int zipCode=p.getZipCode();
 			int pop=p.getPopulation();
-			
+			*/
 			if(pop==0)
 				continue; // ignore an entry with population=0
 			

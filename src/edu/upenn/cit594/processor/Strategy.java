@@ -6,7 +6,6 @@ import edu.upenn.cit594.data.Properties;
 
 public interface Strategy {
 	
-	public double attributeSum(Integer zip, ArrayList<Properties> props);
+	public long attributeSum(Integer zip, ArrayList<Properties> props);
 	
 }
-

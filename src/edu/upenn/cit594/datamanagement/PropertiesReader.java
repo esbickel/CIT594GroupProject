@@ -8,3 +8,5 @@ public interface PropertiesReader {
 	public ArrayList<Properties> read();
 
 }
+
+
