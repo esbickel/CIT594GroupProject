@@ -15,8 +15,13 @@ public class propertiesProcessor {
 		
 	public static void PropertyAverage(Strategy strategy, String fileName) {
 		
-		Scanner kbIn = new Scanner(System.in);
+		PopulationReader popR = new TXTPopulationReader("population.txt");
+		popR.read();
+				
 		Set<String> ZipCodes = Population.getZipCodes();
+		
+		Scanner kbIn = new Scanner(System.in);
+		Population pop = Population.getInstance();
 		String zip = "?";
 		
 		while (!ZipCodes.contains(zip)) {
@@ -29,7 +34,8 @@ public class propertiesProcessor {
 		ArrayList<Properties> props = pr.read();
 		if(props == null) {return;}
 		
-		double attributeTotal = strategy.attributeSum(intZIP, props);
+		long attributeTotal = strategy.attributeSum(intZIP, props);
+		double attTotal = (double)attributeTotal;
 		
 		int propCount = 0;
 		for (Properties prop : props) {
@@ -38,8 +44,33 @@ public class propertiesProcessor {
 			}
 		}
 		
-		double average = attributeTotal/propCount;
+		double average = attTotal/propCount;
 		
 		System.out.println(average);
+	}
+	
+	public static void MarketValuePerCapita() {
+		PopulationReader popR = new TXTPopulationReader("population.txt");
+		popR.read();
+				
+		Set<String> ZipCodes = Population.getZipCodes();
+		
+		Scanner kbIn = new Scanner(System.in);
+		Population pop = Population.getInstance();
+		String zip = "?";
+		
+		while (!ZipCodes.contains(zip)) {
+			System.out.println("Enter a valid ZIP code:  ");
+			zip = kbIn.next();
+		}
+		int intZIP = Integer.parseInt(zip);
+		
+		PropertiesReader pr = new CSVPropertiesReader("properties.csv");
+		ArrayList<Properties> props = pr.read();
+		if(props == null) {return;}
+		
+		long mvTotal = new StrategyAveResidentialMV().attributeSum(intZIP, props);
+				
+		System.out.println(mvTotal);
 	}
 }
