@@ -7,7 +7,7 @@ import edu.upenn.cit594.data.Population;
 
 public interface PopulationReader {
 	
-	public HashMap<Integer, Integer> read();
+	public HashMap<String, Integer> read();
 		
 	}
 
