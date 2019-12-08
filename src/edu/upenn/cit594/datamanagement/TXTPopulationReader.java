@@ -24,6 +24,7 @@ public class TXTPopulationReader implements PopulationReader{
 			BufferedReader in = null;
 				try {
 					in = new  BufferedReader(new FileReader(fileName));
+					Logger l = Logger.getInstance(); l.log(fileName); //Logging
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
