@@ -23,6 +23,11 @@ public class userInterface {
 			System.out.println("please specify the action to be performed (type 0~6)"+"\n");
 
 			String userStep = myObj.nextLine();  // Read user input
+			
+			//Logging
+			Logger l = Logger.getInstance();
+			l.log(userStep);
+			
 			if(userStep.matches("[0-9]+") && (Integer.parseInt(userStep))<=6&&Integer.parseInt(userStep)>=0)
 			{
 				step = Integer.parseInt(userStep);
