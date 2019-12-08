@@ -27,6 +27,7 @@ public class propertiesProcessor {
 		while (!ZipCodes.contains(zip)) {
 			System.out.println("Enter a valid ZIP code:  ");
 			zip = kbIn.next();
+			Logger l = Logger.getInstance(); l.log(zip); //Logging
 		}
 		int intZIP = Integer.parseInt(zip);
 		
@@ -62,6 +63,7 @@ public class propertiesProcessor {
 		while (!ZipCodes.contains(zip)) {
 			System.out.println("Enter a valid ZIP code:  ");
 			zip = kbIn.next();
+			Logger l = Logger.getInstance(); l.log(zip); //Logging
 		}
 		int intZIP = Integer.parseInt(zip);
 		
