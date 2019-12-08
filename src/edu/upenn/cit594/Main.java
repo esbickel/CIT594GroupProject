@@ -24,6 +24,7 @@ public class Main {
 		Logger l = Logger.getInstance(LogFile);
 		l.log(args);
 		
-		
+		userInterface ui = new userInterface();
+		ui.askUserForStep();
 	}
 }
