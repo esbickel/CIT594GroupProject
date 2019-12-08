@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 
 import edu.upenn.cit594.data.Population;
-
+import edu.upenn.cit594.logging.Logger;
 
 public class TXTPopulationReader implements PopulationReader{
 
