@@ -4,6 +4,8 @@ public class Parking {
 	
 	double fine;
 	int zipCode;
+	String state;
+	
 	
 	public Parking() {
 		
@@ -25,6 +27,12 @@ public class Parking {
 		this.zipCode = zipCode;
 	}
 	
-	
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
 
 }
