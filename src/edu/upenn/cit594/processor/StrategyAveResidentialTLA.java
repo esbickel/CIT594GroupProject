@@ -6,7 +6,7 @@ import edu.upenn.cit594.data.Properties;
 import edu.upenn.cit594.datamanagement.CSVPropertiesReader;
 import edu.upenn.cit594.datamanagement.PropertiesReader;
 
-public class StrategyAveResidentialTLA {
+public class StrategyAveResidentialTLA implements Strategy {
 	
 	public double attributeSum(Integer zip, ArrayList<Properties> props) {
 		
