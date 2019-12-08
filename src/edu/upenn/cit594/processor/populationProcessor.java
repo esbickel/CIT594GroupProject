@@ -12,7 +12,7 @@ public class populationProcessor {
 	
 	// Display total population for all ZIP codes
 	
-	public static int totalPopulation () {
+	public static void totalPopulation () {
 		
 		int totalPop = 0;
 		
@@ -20,20 +20,13 @@ public class populationProcessor {
 		pr.read();
 				
 		Set<String> ZipCodes = Population.getZipCodes();	
-		if (ZipCodes.isEmpty()) {return 0;}
+		if (ZipCodes.isEmpty()) {return;}
 
 		
 		for (String zip : ZipCodes) {
 			totalPop += Population.getPopulation(zip);
 		}
 		
-		return totalPop;
-	}
-	
-	public static void main(String[] args) {
-		
-		int totalPop = totalPopulation();
-		
-		System.out.println(totalPop);
+		System.out.println(totalPop); 
 	}
 }
