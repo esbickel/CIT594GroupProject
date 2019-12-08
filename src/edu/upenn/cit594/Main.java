@@ -1,5 +1,15 @@
 package edu.upenn.cit594;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import edu.upenn.cit594.data.Parking;
+import edu.upenn.cit594.data.Properties;
+import edu.upenn.cit594.datamanagement.CSVPropertiesReader;
+import edu.upenn.cit594.datamanagement.ParkingReader;
+import edu.upenn.cit594.datamanagement.PopulationReader;
+import edu.upenn.cit594.datamanagement.PropertiesReader;
+import edu.upenn.cit594.datamanagement.TXTPopulationReader;
 import edu.upenn.cit594.logging.Logger;
 import edu.upenn.cit594.processor.ParkingProcessor;
 import edu.upenn.cit594.ui.userInterface;
@@ -17,16 +27,32 @@ public class Main {
 			System.exit(0);
 		}
 		
-		String ParkingFileFormat = args[0];
-		String ParkingFile = args[1];
-		String PropertyFile = args[2];
-		String PopulationFile = args[3];	
-		String LogFile = args[4];
+		String parkingFileFormat = args[0];
+		String parkingFile = args[1];
+		String propertyFile = args[2];
+		String populationFile = args[3];	
+		String logFile = args[4];
 		
-		Logger l = Logger.getInstance(LogFile);
+		Logger l = Logger.getInstance(logFile);
 		l.log(args);
 		
-		userInterface ui = new userInterface();
+		HashMap<Integer,Integer> population = new HashMap<>();
+		ArrayList<Parking> parking = new ArrayList<>();
+		ArrayList<Properties> properties = new ArrayList<>();
+		
+		//read population file
+		PopulationReader populationReader = new TXTPopulationReader(populationFile);
+		population = populationReader.read();
+		
+		//read parking file
+		ParkingReader parkingReader = ParkingProcessor.parkingProcess(parkingFileFormat, parkingFile);
+		parking = parkingReader.read();
+
+		//read properties file
+		PropertiesReader propertiesReader = new CSVPropertiesReader(propertyFile);
+		properties= propertiesReader.read();
+		
+		userInterface ui = new userInterface(population, parking, properties);
 		ui.askUserForStep();
 		
 	}

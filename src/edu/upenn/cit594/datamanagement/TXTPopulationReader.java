@@ -9,15 +9,14 @@ import edu.upenn.cit594.logging.Logger;
 public class TXTPopulationReader implements PopulationReader{
 
 	String fileName;
-	HashMap<String, Integer> populations;
 	
 	public TXTPopulationReader(String myFile) {
 		fileName=myFile;
 		
 	}
 	
-	public HashMap<String, Integer> read(){
-		populations = new HashMap<>();
+	public HashMap<Integer, Integer> read(){
+		HashMap<Integer,Integer> population = new HashMap<>();
 		String str;
 		String txtSplitBy =" ";
 		
@@ -47,8 +46,9 @@ public class TXTPopulationReader implements PopulationReader{
 
 						population.add(pp);
 						*/
-						pp.add(populationString[0], populationString[1]);
-						
+						pp.add(Integer.parseInt(populationString[0]), Integer.parseInt(populationString[1]));
+					
+						population.put(Integer.parseInt(populationString[0]), Integer.parseInt(populationString[1]));
 					}
 				} catch (NumberFormatException e) {
 					// TODO Auto-generated catch block
@@ -60,7 +60,7 @@ public class TXTPopulationReader implements PopulationReader{
 		
 		//System.out.println(tweets.get(1).getCoordinate()+tweets.get(1).getText());
 		
-	return Population.get();
+	return population;
 	}
 
 	public String[] splitt(String str){
