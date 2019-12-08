@@ -5,6 +5,7 @@ import java.io.*;
 import java.util.*;
 
 import edu.upenn.cit594.data.Parking;
+import edu.upenn.cit594.logging.Logger;
 
 public class CSVParkingReader implements ParkingReader {
 	String fileName;
