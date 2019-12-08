@@ -16,7 +16,7 @@ public class TXTPopulationReader implements PopulationReader{
 		
 	}
 	
-	public HashMap<String, Integer> read(){
+	public HashMap<Integer, Integer> read(){
 		populations = new HashMap<>();
 		String str;
 		String txtSplitBy =" ";
@@ -47,7 +47,7 @@ public class TXTPopulationReader implements PopulationReader{
 
 						population.add(pp);
 						*/
-						pp.add(populationString[0], populationString[1]);
+						pp.add(Integer.parseInt(populationString[0]), populationString[1]);
 						
 					}
 				} catch (NumberFormatException e) {

@@ -19,7 +19,7 @@ public class propertiesProcessor {
 		PopulationReader popR = new TXTPopulationReader("population.txt");
 		popR.read();
 				
-		Set<String> ZipCodes = Population.getZipCodes();
+		Set<Integer> ZipCodes = Population.getZipCodes();
 		
 		Scanner kbIn = new Scanner(System.in);
 		Population pop = Population.getInstance();
@@ -55,7 +55,7 @@ public class propertiesProcessor {
 		PopulationReader popR = new TXTPopulationReader("population.txt");
 		popR.read();
 				
-		Set<String> ZipCodes = Population.getZipCodes();
+		Set<Integer> ZipCodes = Population.getZipCodes();
 		
 		Scanner kbIn = new Scanner(System.in);
 		Population pop = Population.getInstance();

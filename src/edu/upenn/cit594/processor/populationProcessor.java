@@ -19,11 +19,11 @@ public class populationProcessor {
 		PopulationReader pr = new TXTPopulationReader("population.txt");
 		pr.read();
 				
-		Set<String> ZipCodes = Population.getZipCodes();	
+		Set<Integer> ZipCodes = Population.getZipCodes();	
 		if (ZipCodes.isEmpty()) {return;}
 
 		
-		for (String zip : ZipCodes) {
+		for (Integer zip : ZipCodes) {
 			totalPop += Population.getPopulation(zip);
 		}
 		
