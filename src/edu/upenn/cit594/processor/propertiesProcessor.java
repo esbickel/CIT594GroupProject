@@ -48,6 +48,9 @@ public class propertiesProcessor {
 			}
 		}
 		
+		//System.out.println("number of properties"+propCount);
+		//System.out.println("total residential mv" + attTotal);
+		
 		if(propCount==0 ||attTotal==0)   //display 0 if the total residential mv for that zip code is 0;
 			{
 			return 0;	
@@ -59,7 +62,7 @@ public class propertiesProcessor {
 		}
 	}
 	
-	public double MarketValuePerCapita(ArrayList<Properties> properties, HashMap<Integer, Integer> population, int zipCode) {
+	public double MarketValuePerCapita(ArrayList<Properties> properties, HashMap<Integer, Integer> population, int zipCode, boolean print) {
 		//PopulationReader popR = new TXTPopulationReader("population.txt");
 		//popR.read();
 				
@@ -81,7 +84,9 @@ public class propertiesProcessor {
 		if(properties == null) {return 0;}
 		double mvTotal = new StrategyAveResidentialMV().attributeSum(zipCode, properties);	
 		double mvPerCapita = mvTotal/population.get(zipCode);
-		System.out.println((int)mvPerCapita);
+		//System.out.println("population = " + population.get(zipCode));
+		if(print==true)
+			System.out.println((int)mvPerCapita);
 		return mvPerCapita; 
 	}
 }

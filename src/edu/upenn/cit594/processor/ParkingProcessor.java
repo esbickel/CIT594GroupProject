@@ -11,8 +11,8 @@ import edu.upenn.cit594.datamanagement.ParkingReader;
 public class ParkingProcessor {
 
 	protected ParkingReader reader;
-	HashMap<Integer,Double> totalFines = new HashMap<>(); //for memorization purpose
-	HashMap<Integer,Double> totalFinesPerCapita = new HashMap<>(); //for memorization purpose
+	HashMap<Integer,Double> totalFines = new HashMap<>(); 
+	HashMap<Integer,Double> totalFinesPerCapita = new HashMap<>(); 
 
 	public ParkingProcessor(){
 		
@@ -41,7 +41,7 @@ public class ParkingProcessor {
 
 		for(int i=0; i<parking.size();i++)
 		{	
-			Parking p=parking.get(i);  //for memorization puporse
+			Parking p=parking.get(i);  
 			Integer zipCode =p.getZipCode();
 			double fines =p.getFine();
 			double currentTotalFines=0;
@@ -64,6 +64,7 @@ public class ParkingProcessor {
 		
 		
 		//Suggested:
+		DecimalFormat df = new DecimalFormat("0.0000");//round down to 4 decimal points
 		Set<Integer> ZipCodes = Population.getZipCodes();
 		for (Integer zipCode : ZipCodes) {
 		 		int pop = Population.getPopulation(zipCode);
@@ -80,7 +81,6 @@ public class ParkingProcessor {
 			if(!totalFines.containsKey(zipCode)) 
 				continue; //ignore non PA state, ignore entry when fine for that zipcode is missing
 
-			DecimalFormat df = new DecimalFormat("#.####");//round down to 4 decimal points
 			String roundedDown = df.format((totalFines.get(zipCode)/pop));
 			//System.out.println("population="+ pop +"; zipCode="+zipCode + ";sumFine="+totalFines.get(zipCode));
 
@@ -91,7 +91,7 @@ public class ParkingProcessor {
 		Object[] arr=set.toArray();
 		Arrays.sort(arr);
 		for(Object key:arr) {
-			sortedTotalFinesPerCapita.add(key+" "+totalFinesPerCapita.get(key));
+			sortedTotalFinesPerCapita.add(key+" "+df.format(totalFinesPerCapita.get(key)));
 			output.put((Integer) key,totalFinesPerCapita.get(key));
 		}
 		if(print==true) 
@@ -103,8 +103,7 @@ public class ParkingProcessor {
 	}
 
 
-	//calculate the top 1 fine per capita with its area zip code and average residential market value for that zipcode area.
-	//output will look like this: zipcode +topFinesPerCapita + averageResidentialMV
+	//calculate the top 1 fine per capita with its area zip code and total residential market value per capita for that zipcode area.
 	public String Top1FinePerCapita(HashMap<Integer,Integer> population, ArrayList<Properties> properties, ArrayList<Parking> parking){
 		
 		HashMap<Integer,Double> totalFinesPerCapitaPerZip =new HashMap<>();
@@ -122,10 +121,9 @@ public class ParkingProcessor {
 		 }
 		}
 			propertiesProcessor pp=new propertiesProcessor();
-			aveMktValue =pp.MarketValuePerCapita(properties,population,zipCode);
-			//System.out.println("the top fine per capita with its area zip code and average residential market value:");
-			output ="Zip code= " + zipCode + ", topFinesPerCapita= " + top1Fine + " ,averageResidentialMV= " + aveMktValue;
-			//System.out.println(output);
+			aveMktValue =pp.MarketValuePerCapita(properties,population,zipCode,false);
+			output = "the largest fine amount per capita for all searched ZIP code is: $" +top1Fine + "\n" + "this is for area with ZIP Code ="+zipCode+" and total residential market value per capita = $" +(int)aveMktValue;
+			System.out.println(output);
 			return output;
 		
 	}

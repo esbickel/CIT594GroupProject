@@ -42,7 +42,7 @@ public class CSVPropertiesReader implements PropertiesReader {
 			//}
 				
 			firstRow=br.readLine();
-			String[] field = firstRow.split(csvSplitBy);
+			String[] field = firstRow.split(csvSplitBy,-1);
 			int length = field.length;
 			
 			while(!field[a].equals("market_value")&& a<length) {
@@ -65,13 +65,17 @@ public class CSVPropertiesReader implements PropertiesReader {
 				int zipCode=0;
 				
 				//Use comma as a seperatpr
-				String[] propertyString = line.split(csvSplitBy);
+				String[] propertyString = line.split(csvSplitBy,-1);
 				
-				if(propertyString.length<length) //check if the row has 77 columns in case some data is missing
-					continue;
+				//if(propertyString.length<length) //check if the row has 77 columns in case some data is missing
+				//	continue;
 				
-				if(propertyString[a].isEmpty()||propertyString[b].isEmpty()||propertyString[c].length()<5||!propertyString[c].matches("[0-9]+"))
-					continue; //data is missing, ignore the whole row
+				if(propertyString[a].isEmpty()||propertyString[b].isEmpty()||propertyString[c].length()<5)
+					continue; // ignore the whole row for: data is missing.
+				
+				if(!propertyString[c].substring(0,5).matches("[0-9]+"))
+					continue; // ignore the whole row for: format is not correct.
+				
 				marketValue=Double.parseDouble(propertyString[a]); 
 				property.setMarketValue(marketValue);
 				

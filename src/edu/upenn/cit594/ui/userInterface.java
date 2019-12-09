@@ -20,7 +20,6 @@ import edu.upenn.cit594.processor.StrategyAveResidentialTLA;
 import edu.upenn.cit594.processor.populationProcessor;
 
 public class userInterface {
-	//int zipCode;
 	HashMap<Integer, Integer> population;
 	ArrayList<Parking> parking;
 	ArrayList<Properties> properties;
@@ -144,16 +143,17 @@ public class userInterface {
 					}
 					else {
 					propertiesProcessor propertiesProcessor=new propertiesProcessor();
-					mktValue=propertiesProcessor.MarketValuePerCapita( properties,population,zipCode);
+					mktValue=propertiesProcessor.MarketValuePerCapita( properties,population,zipCode,true);
 					mktValuePerCapita.put(zipCode, mktValue);
 					}
 				}
 				else if (step == 6) {
-					
+					//calculate the top 1 fine per capita with its area zip code and total residential market value per capita for that zipcode area.
+
 					if(outputForQuestion6==null)
 					{
 					ParkingProcessor parkingProcessor=new ParkingProcessor();
-					parkingProcessor.Top1FinePerCapita(population, properties, parking);
+					outputForQuestion6=parkingProcessor.Top1FinePerCapita(population, properties, parking);
 					}
 					else
 						System.out.println(outputForQuestion6);

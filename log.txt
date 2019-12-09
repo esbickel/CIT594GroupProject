@@ -23,3 +23,228 @@
 1575817021455 parking.json
 =======
 >>>>>>> parent of 61b249a... update zipcode of population from String to Integer
+1575926965001 csv parking.csv properties.csv population.txt logger.txt 
+1575926965002 population.txt
+1575926965006 parking.csv
+1575926977523 csv parking.csv properties.csv population.txt logger.txt 
+1575926977525 population.txt
+1575926977530 parking.csv
+1575927049715 csv parking.csv properties.csv population.txt logger.txt 
+1575927049717 population.txt
+1575927049723 parking.csv
+1575927049974 properties.csv
+1575927064136 6
+1575927132613 csv parking.csv properties.csv population.txt logger.txt 
+1575927132615 population.txt
+1575927132624 parking.csv
+1575927132915 properties.csv
+1575927139793 6
+1575927171360 csv parking.csv properties.csv population.txt logger.txt 
+1575927171362 population.txt
+1575927171369 parking.csv
+1575927171652 properties.csv
+1575927191693 6
+1575927207722 csv parking.csv properties.csv population.txt logger.txt 
+1575927207723 population.txt
+1575927207727 parking.csv
+1575927207930 properties.csv
+1575927235762 csv parking.csv properties.csv population.txt logger.txt 
+1575927235763 population.txt
+1575927235771 parking.csv
+1575927236226 properties.csv
+1575927241407 6
+1575927244517 6
+1575927278815 csv parking.csv properties.csv population.txt logger.txt 
+1575927278818 population.txt
+1575927278825 parking.csv
+1575927279086 properties.csv
+1575927284667 6
+1575927339769 6
+1575927385072 csv parking.csv properties.csv population.txt logger.txt 
+1575927385075 population.txt
+1575927385081 parking.csv
+1575927385391 properties.csv
+1575927390954 6
+1575927396069 6
+1575927433610 csv parking.csv properties.csv population.txt logger.txt 
+1575927433611 population.txt
+1575927433616 parking.csv
+1575927433892 properties.csv
+1575927439732 6
+1575927471964 csv parking.csv properties.csv population.txt logger.txt 
+1575927471966 population.txt
+1575927471971 parking.csv
+1575927472301 properties.csv
+1575927478512 6
+1575927527962 csv parking.csv properties.csv population.txt logger.txt 
+1575927527963 population.txt
+1575927527968 parking.csv
+1575927528268 properties.csv
+1575927533942 6
+1575927549538 5
+1575927559188 19113
+1575927575092 5
+1575927578285 19102
+1575927671112 0
+1575927676702 csv parking.csv properties.csv population.txt logger.txt 
+1575927676704 population.txt
+1575927676709 parking.csv
+1575927676975 properties.csv
+1575927681947 1
+1575927685115 2
+1575927811326 csv parking.csv properties.csv population.txt logger.txt 
+1575927811328 population.txt
+1575927811333 parking.csv
+1575927811550 properties.csv
+1575927817716 2
+1575927862599 csv parking.csv properties.csv population.txt logger.txt 
+1575927862600 population.txt
+1575927862607 parking.csv
+1575927862804 properties.csv
+1575927868272 2
+1575928638428 csv parking.csv properties.csv population.txt logger.txt 
+1575928638430 population.txt
+1575928638438 parking.csv
+1575928638710 properties.csv
+1575928643714 2
+1575928822384 csv parking.csv properties.csv population.txt logger.txt 
+1575928822386 population.txt
+1575928822389 parking.csv
+1575928822610 properties.csv
+1575928827555 2
+1575928907905 csv parking.csv properties.csv population.txt logger.txt 
+1575928907907 population.txt
+1575928907912 parking.csv
+1575928908141 properties.csv
+1575928914042 2
+1575928923714 3
+1575928952143 19102
+1575929023351 csv parking.csv properties.csv population.txt logger.txt 
+1575929023352 population.txt
+1575929023360 parking.csv
+1575929023581 properties.csv
+1575929030518 3
+1575929032641 19102
+1575929142683 csv parking.csv properties.csv population.txt logger.txt 
+1575929142684 population.txt
+1575929142694 parking.csv
+1575929142912 properties.csv
+1575929148512 3
+1575929152233 19102
+1575929677594 csv parking.csv properties.csv population.txt logger.txt 
+1575929677596 population.txt
+1575929677602 parking.csv
+1575929678087 properties.csv
+1575929685853 3
+1575929696040 19102
+1575929984923 5
+1575929988716 19102
+1575930196266 csv parking.csv properties.csv population.txt logger.txt 
+1575930196268 population.txt
+1575930196275 parking.csv
+1575930196526 properties.csv
+1575930201931 3
+1575930206543 19102
+1575930307883 3
+1575930311202 19103
+1575930337476 3
+1575930340435 19113
+1575930353552 3
+1575930355748 19112
+1575930361542 19102
+1575930364324 3
+1575930367330 19102
+1575931079744 csv parking.csv properties.csv population.txt logger.txt 
+1575931079745 population.txt
+1575931079754 parking.csv
+1575931079977 properties.csv
+1575931085361 1
+1575931087481 2
+1575931089770 3
+1575931096632 11902
+1575931102554 19102
+1575931111311 3
+1575931113320 19102
+1575931144164 4
+1575931151226 19102
+1575931186118 3
+1575931188314 19102
+1575931194468 csv parking.csv properties.csv population.txt logger.txt 
+1575931194469 population.txt
+1575931194477 parking.csv
+1575931194722 properties.csv
+1575931199990 3
+1575931205208 19102
+1575931242326 csv parking.csv properties.csv population.txt logger.txt 
+1575931242327 population.txt
+1575931242332 parking.csv
+1575931242571 properties.csv
+1575931248253 3
+1575931252080 19102
+1575931501252 csv parking.csv properties.csv population.txt logger.txt 
+1575931501253 population.txt
+1575931501258 parking.csv
+1575931501486 properties.csv
+1575931507072 3
+1575931510024 19102
+1575931557966 csv parking.csv properties.csv population.txt logger.txt 
+1575931557968 population.txt
+1575931557972 parking.csv
+1575931558205 properties.csv
+1575931563649 3
+1575931567282 19102
+1575931636190 csv parking.csv properties.csv population.txt logger.txt 
+1575931636191 population.txt
+1575931636197 parking.csv
+1575931636446 properties.csv
+1575931642258 3
+1575931646612 19102
+1575931781313 csv parking.csv properties.csv population.txt logger.txt 
+1575931781314 population.txt
+1575931781320 parking.csv
+1575931781639 properties.csv
+1575931786720 3
+1575931788504 19102
+1575931864055 csv parking.csv properties.csv population.txt logger.txt 
+1575931864056 population.txt
+1575931864063 parking.csv
+1575931864423 properties.csv
+1575931905578 csv parking.csv properties.csv population.txt logger.txt 
+1575931905580 population.txt
+1575931905587 parking.csv
+1575931905871 properties.csv
+1575932043674 csv parking.csv properties.csv population.txt logger.txt 
+1575932043675 population.txt
+1575932043681 parking.csv
+1575932044004 properties.csv
+1575932048145 3
+1575932049990 19102
+1575932147916 csv parking.csv properties.csv population.txt logger.txt 
+1575932147917 population.txt
+1575932147921 parking.csv
+1575932148191 properties.csv
+1575932153564 3
+1575932156391 19102
+1575932168175 csv parking.csv properties.csv population.txt logger.txt 
+1575932168177 population.txt
+1575932168183 parking.csv
+1575932168717 properties.csv
+1575932174252 3
+1575932176323 19102
+1575932212038 csv parking.csv properties.csv population.txt logger.txt 
+1575932212040 population.txt
+1575932212046 parking.csv
+1575932212514 properties.csv
+1575932218411 1
+1575932220225 2
+1575932222095 3
+1575932223990 19102
+1575932226942 4
+1575932229203 19102
+1575932230864 5
+1575932232774 19102
+1575932248014 csv parking.csv properties.csv population.txt logger.txt 
+1575932248015 population.txt
+1575932248021 parking.csv
+1575932248301 properties.csv
+1575932254019 6
